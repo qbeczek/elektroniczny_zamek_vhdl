@@ -1,5 +1,5 @@
 Analysis & Synthesis report for elektroniczny_zamek
-Tue Apr 21 20:28:34 2020
+Tue Apr 21 20:38:25 2020
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -43,15 +43,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Apr 21 20:28:34 2020       ;
+; Analysis & Synthesis Status        ; Successful - Tue Apr 21 20:38:25 2020       ;
 ; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                      ; elektroniczny_zamek                         ;
 ; Top-level Entity Name              ; kb_ctrl_pckg                                ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 0                                           ;
-;     Total combinational functions  ; 0                                           ;
-;     Dedicated logic registers      ; 0                                           ;
-; Total registers                    ; 0                                           ;
+; Total logic elements               ; 11                                          ;
+;     Total combinational functions  ; 11                                          ;
+;     Dedicated logic registers      ; 4                                           ;
+; Total registers                    ; 4                                           ;
 ; Total pins                         ; 15                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -155,10 +155,11 @@ https://fpgasoftware.intel.com/eula.
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -167,49 +168,56 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                            ; Library ;
 +----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------+---------+
+; dec_2x4.vhd                      ; yes             ; User VHDL File  ; C:/Users/KUBA/Desktop/projektyVHDL/elektroniczny_zamek/dec_2x4.vhd      ;         ;
+; mux_2x4.vhd                      ; yes             ; User VHDL File  ; C:/Users/KUBA/Desktop/projektyVHDL/elektroniczny_zamek/mux_2x4.vhd      ;         ;
+; cnt_4.vhd                        ; yes             ; User VHDL File  ; C:/Users/KUBA/Desktop/projektyVHDL/elektroniczny_zamek/cnt_4.vhd        ;         ;
 ; digit_lock.vhd                   ; yes             ; User VHDL File  ; C:/Users/KUBA/Desktop/projektyVHDL/elektroniczny_zamek/digit_lock.vhd   ;         ;
 ; kb_ctrl_pckg.vhd                 ; yes             ; User VHDL File  ; C:/Users/KUBA/Desktop/projektyVHDL/elektroniczny_zamek/kb_ctrl_pckg.vhd ;         ;
 +----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary         ;
-+---------------------------------------------+-------+
-; Resource                                    ; Usage ;
-+---------------------------------------------+-------+
-;                                             ;       ;
-; Total combinational functions               ; 0     ;
-; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 0     ;
-;     -- 3 input functions                    ; 0     ;
-;     -- <=2 input functions                  ; 0     ;
-;                                             ;       ;
-; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 0     ;
-;     -- arithmetic mode                      ; 0     ;
-;                                             ;       ;
-; Total registers                             ; 0     ;
-;     -- Dedicated logic registers            ; 0     ;
-;     -- I/O registers                        ; 0     ;
-;                                             ;       ;
-; I/O pins                                    ; 15    ;
-;                                             ;       ;
-; Embedded Multiplier 9-bit elements          ; 0     ;
-;                                             ;       ;
-; Maximum fan-out node                        ; rst   ;
-; Maximum fan-out                             ; 1     ;
-; Total fan-out                               ; 15    ;
-; Average fan-out                             ; 0.50  ;
-+---------------------------------------------+-------+
++-----------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                           ;
++---------------------------------------------+-------------------------+
+; Resource                                    ; Usage                   ;
++---------------------------------------------+-------------------------+
+; Estimated Total logic elements              ; 11                      ;
+;                                             ;                         ;
+; Total combinational functions               ; 11                      ;
+; Logic element usage by number of LUT inputs ;                         ;
+;     -- 4 input functions                    ; 4                       ;
+;     -- 3 input functions                    ; 1                       ;
+;     -- <=2 input functions                  ; 6                       ;
+;                                             ;                         ;
+; Logic elements by mode                      ;                         ;
+;     -- normal mode                          ; 11                      ;
+;     -- arithmetic mode                      ; 0                       ;
+;                                             ;                         ;
+; Total registers                             ; 4                       ;
+;     -- Dedicated logic registers            ; 4                       ;
+;     -- I/O registers                        ; 0                       ;
+;                                             ;                         ;
+; I/O pins                                    ; 15                      ;
+;                                             ;                         ;
+; Embedded Multiplier 9-bit elements          ; 0                       ;
+;                                             ;                         ;
+; Maximum fan-out node                        ; cnt_4:kb_cnt|counter[2] ;
+; Maximum fan-out                             ; 7                       ;
+; Total fan-out                               ; 67                      ;
+; Average fan-out                             ; 1.49                    ;
++---------------------------------------------+-------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                       ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name  ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+--------------+
-; |kb_ctrl_pckg              ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 15   ; 0            ; |kb_ctrl_pckg       ; kb_ctrl_pckg ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+--------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------+--------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name          ; Entity Name  ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------+--------------+--------------+
+; |kb_ctrl_pckg              ; 11 (0)              ; 4 (0)                     ; 0           ; 0            ; 0       ; 0         ; 15   ; 0            ; |kb_ctrl_pckg                ; kb_ctrl_pckg ; work         ;
+;    |cnt_4:kb_cnt|          ; 5 (5)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |kb_ctrl_pckg|cnt_4:kb_cnt   ; cnt_4        ; work         ;
+;    |dec_2x4:kb_dec|        ; 4 (4)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |kb_ctrl_pckg|dec_2x4:kb_dec ; dec_2x4      ; work         ;
+;    |mux_2x4:kb_mux|        ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |kb_ctrl_pckg|mux_2x4:kb_mux ; mux_2x4      ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------+--------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -218,10 +226,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 0     ;
+; Total registers                              ; 4     ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Clear ; 4     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
@@ -234,12 +242,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 15                          ;
-; cycloneiii_lcell_comb ; 1                           ;
-;     normal            ; 1                           ;
-;         0 data inputs ; 1                           ;
+; cycloneiii_ff         ; 4                           ;
+;     CLR               ; 4                           ;
+; cycloneiii_lcell_comb ; 12                          ;
+;     normal            ; 12                          ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 6                           ;
+;         3 data inputs ; 1                           ;
+;         4 data inputs ; 4                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 0.00                        ;
-; Average LUT depth     ; 0.00                        ;
+; Max LUT depth         ; 3.00                        ;
+; Average LUT depth     ; 2.14                        ;
 +-----------------------+-----------------------------+
 
 
@@ -258,7 +271,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Tue Apr 21 20:28:23 2020
+    Info: Processing started: Tue Apr 21 20:38:14 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off elektroniczny_zamek -c elektroniczny_zamek
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -280,35 +293,20 @@ Info (12021): Found 2 design units, including 1 entities, in source file kb_ctrl
     Info (12022): Found design unit 1: kb_ctrl_pckg-data_flow File: C:/Users/KUBA/Desktop/projektyVHDL/elektroniczny_zamek/kb_ctrl_pckg.vhd Line: 16
     Info (12023): Found entity 1: kb_ctrl_pckg File: C:/Users/KUBA/Desktop/projektyVHDL/elektroniczny_zamek/kb_ctrl_pckg.vhd Line: 5
 Info (12127): Elaborating entity "kb_ctrl_pckg" for the top level hierarchy
-Warning (10541): VHDL Signal Declaration warning at kb_ctrl_pckg.vhd(10): used implicit default value for signal "key_pulse" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/KUBA/Desktop/projektyVHDL/elektroniczny_zamek/kb_ctrl_pckg.vhd Line: 10
-Warning (10541): VHDL Signal Declaration warning at kb_ctrl_pckg.vhd(11): used implicit default value for signal "row" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/KUBA/Desktop/projektyVHDL/elektroniczny_zamek/kb_ctrl_pckg.vhd Line: 11
-Warning (10541): VHDL Signal Declaration warning at kb_ctrl_pckg.vhd(12): used implicit default value for signal "q" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/KUBA/Desktop/projektyVHDL/elektroniczny_zamek/kb_ctrl_pckg.vhd Line: 12
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "key_pulse" is stuck at GND File: C:/Users/KUBA/Desktop/projektyVHDL/elektroniczny_zamek/kb_ctrl_pckg.vhd Line: 10
-    Warning (13410): Pin "row[0]" is stuck at GND File: C:/Users/KUBA/Desktop/projektyVHDL/elektroniczny_zamek/kb_ctrl_pckg.vhd Line: 11
-    Warning (13410): Pin "row[1]" is stuck at GND File: C:/Users/KUBA/Desktop/projektyVHDL/elektroniczny_zamek/kb_ctrl_pckg.vhd Line: 11
-    Warning (13410): Pin "row[2]" is stuck at GND File: C:/Users/KUBA/Desktop/projektyVHDL/elektroniczny_zamek/kb_ctrl_pckg.vhd Line: 11
-    Warning (13410): Pin "row[3]" is stuck at GND File: C:/Users/KUBA/Desktop/projektyVHDL/elektroniczny_zamek/kb_ctrl_pckg.vhd Line: 11
-    Warning (13410): Pin "q[0]" is stuck at GND File: C:/Users/KUBA/Desktop/projektyVHDL/elektroniczny_zamek/kb_ctrl_pckg.vhd Line: 12
-    Warning (13410): Pin "q[1]" is stuck at GND File: C:/Users/KUBA/Desktop/projektyVHDL/elektroniczny_zamek/kb_ctrl_pckg.vhd Line: 12
-    Warning (13410): Pin "q[2]" is stuck at GND File: C:/Users/KUBA/Desktop/projektyVHDL/elektroniczny_zamek/kb_ctrl_pckg.vhd Line: 12
-    Warning (13410): Pin "q[3]" is stuck at GND File: C:/Users/KUBA/Desktop/projektyVHDL/elektroniczny_zamek/kb_ctrl_pckg.vhd Line: 12
+Info (12128): Elaborating entity "cnt_4" for hierarchy "cnt_4:kb_cnt" File: C:/Users/KUBA/Desktop/projektyVHDL/elektroniczny_zamek/kb_ctrl_pckg.vhd Line: 22
+Info (12128): Elaborating entity "mux_2x4" for hierarchy "mux_2x4:kb_mux" File: C:/Users/KUBA/Desktop/projektyVHDL/elektroniczny_zamek/kb_ctrl_pckg.vhd Line: 30
+Info (12128): Elaborating entity "dec_2x4" for hierarchy "dec_2x4:kb_dec" File: C:/Users/KUBA/Desktop/projektyVHDL/elektroniczny_zamek/kb_ctrl_pckg.vhd Line: 37
+Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 6 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "rst" File: C:/Users/KUBA/Desktop/projektyVHDL/elektroniczny_zamek/kb_ctrl_pckg.vhd Line: 7
-    Warning (15610): No output dependent on input pin "clk" File: C:/Users/KUBA/Desktop/projektyVHDL/elektroniczny_zamek/kb_ctrl_pckg.vhd Line: 8
-    Warning (15610): No output dependent on input pin "col[0]" File: C:/Users/KUBA/Desktop/projektyVHDL/elektroniczny_zamek/kb_ctrl_pckg.vhd Line: 9
-    Warning (15610): No output dependent on input pin "col[1]" File: C:/Users/KUBA/Desktop/projektyVHDL/elektroniczny_zamek/kb_ctrl_pckg.vhd Line: 9
-    Warning (15610): No output dependent on input pin "col[2]" File: C:/Users/KUBA/Desktop/projektyVHDL/elektroniczny_zamek/kb_ctrl_pckg.vhd Line: 9
-    Warning (15610): No output dependent on input pin "col[3]" File: C:/Users/KUBA/Desktop/projektyVHDL/elektroniczny_zamek/kb_ctrl_pckg.vhd Line: 9
-Info (21057): Implemented 15 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 26 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 6 input pins
     Info (21059): Implemented 9 output pins
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 21 warnings
-    Info: Peak virtual memory: 4791 megabytes
-    Info: Processing ended: Tue Apr 21 20:28:35 2020
-    Info: Elapsed time: 00:00:12
+    Info (21061): Implemented 11 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4792 megabytes
+    Info: Processing ended: Tue Apr 21 20:38:25 2020
+    Info: Elapsed time: 00:00:11
     Info: Total CPU time (on all processors): 00:00:21
 
 

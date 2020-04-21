@@ -19,6 +19,28 @@ architecture data_flow of kb_ctrl_pckg is
 	signal key_pulse_i : std_logic;
 
 begin 
+	kb_cnt : cnt_4
+		port map(
+			rst => rst,
+			clk => clk,
+			ena => (not key_pulse_i),
+			wart => q_i
+		);
+	
+	kb_mux : mux_2x4
+		port map(
+			sel => q_i(1 downto 0),
+			data => col,
+			o => key_pulse_i
+		);
+		
+	kb_dec : dec_2x4
+		port map(
+			a => q_i (3 downto 2),
+			o => row 
+		);
 
+	q <= q_i;
+	key_pulse <= key_pulse_i;
 
 end data_flow;

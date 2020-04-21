@@ -1,18 +1,62 @@
 |kb_ctrl_pckg
-rst => ~NO_FANOUT~
-clk => ~NO_FANOUT~
-col[0] => ~NO_FANOUT~
-col[1] => ~NO_FANOUT~
-col[2] => ~NO_FANOUT~
-col[3] => ~NO_FANOUT~
-key_pulse <= key_pulse.DB_MAX_OUTPUT_PORT_TYPE
-row[0] <= row[0].DB_MAX_OUTPUT_PORT_TYPE
-row[1] <= row[1].DB_MAX_OUTPUT_PORT_TYPE
-row[2] <= row[2].DB_MAX_OUTPUT_PORT_TYPE
-row[3] <= row[3].DB_MAX_OUTPUT_PORT_TYPE
-q[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
-q[1] <= q[1].DB_MAX_OUTPUT_PORT_TYPE
-q[2] <= q[2].DB_MAX_OUTPUT_PORT_TYPE
-q[3] <= q[3].DB_MAX_OUTPUT_PORT_TYPE
+rst => cnt_4:kb_cnt.rst
+clk => cnt_4:kb_cnt.clk
+col[0] => mux_2x4:kb_mux.data[0]
+col[1] => mux_2x4:kb_mux.data[1]
+col[2] => mux_2x4:kb_mux.data[2]
+col[3] => mux_2x4:kb_mux.data[3]
+key_pulse << mux_2x4:kb_mux.o
+row[0] << dec_2x4:kb_dec.o[0]
+row[1] << dec_2x4:kb_dec.o[1]
+row[2] << dec_2x4:kb_dec.o[2]
+row[3] << dec_2x4:kb_dec.o[3]
+q[0] << cnt_4:kb_cnt.wart[0]
+q[1] << cnt_4:kb_cnt.wart[1]
+q[2] << cnt_4:kb_cnt.wart[2]
+q[3] << cnt_4:kb_cnt.wart[3]
+
+
+|kb_ctrl_pckg|cnt_4:kb_cnt
+rst => counter[0].ACLR
+rst => counter[1].ACLR
+rst => counter[2].ACLR
+rst => counter[3].ACLR
+clk => counter[0].CLK
+clk => counter[1].CLK
+clk => counter[2].CLK
+clk => counter[3].CLK
+ena => counter[3].ENA
+ena => counter[2].ENA
+ena => counter[1].ENA
+ena => counter[0].ENA
+wart[0] <= counter[0].DB_MAX_OUTPUT_PORT_TYPE
+wart[1] <= counter[1].DB_MAX_OUTPUT_PORT_TYPE
+wart[2] <= counter[2].DB_MAX_OUTPUT_PORT_TYPE
+wart[3] <= counter[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|kb_ctrl_pckg|mux_2x4:kb_mux
+sel[0] => Mux0.IN1
+sel[1] => Mux0.IN0
+data[0] => Mux0.IN5
+data[1] => Mux0.IN4
+data[2] => Mux0.IN3
+data[3] => Mux0.IN2
+o <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|kb_ctrl_pckg|dec_2x4:kb_dec
+a[0] => Mux0.IN5
+a[0] => Mux1.IN5
+a[0] => Mux2.IN5
+a[0] => Mux3.IN5
+a[1] => Mux0.IN4
+a[1] => Mux1.IN4
+a[1] => Mux2.IN4
+a[1] => Mux3.IN4
+o[0] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+o[1] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+o[2] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+o[3] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
 
 
