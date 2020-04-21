@@ -1,5 +1,5 @@
 Analysis & Synthesis report for elektroniczny_zamek
-Tue Apr 21 20:38:25 2020
+Tue Apr 21 21:07:28 2020
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -43,7 +43,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Apr 21 20:38:25 2020       ;
+; Analysis & Synthesis Status        ; Successful - Tue Apr 21 21:07:28 2020       ;
 ; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                      ; elektroniczny_zamek                         ;
 ; Top-level Entity Name              ; kb_ctrl_pckg                                ;
@@ -271,7 +271,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Tue Apr 21 20:38:14 2020
+    Info: Processing started: Tue Apr 21 21:07:18 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off elektroniczny_zamek -c elektroniczny_zamek
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -304,9 +304,9 @@ Info (21057): Implemented 26 device resources after synthesis - the final resour
     Info (21059): Implemented 9 output pins
     Info (21061): Implemented 11 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4792 megabytes
-    Info: Processing ended: Tue Apr 21 20:38:25 2020
-    Info: Elapsed time: 00:00:11
+    Info: Peak virtual memory: 4793 megabytes
+    Info: Processing ended: Tue Apr 21 21:07:28 2020
+    Info: Elapsed time: 00:00:10
     Info: Total CPU time (on all processors): 00:00:21
 
 

@@ -6,6 +6,7 @@ source_file = 1, C:/Users/KUBA/Desktop/projektyVHDL/elektroniczny_zamek/cnt_sim.
 source_file = 1, C:/Users/KUBA/Desktop/projektyVHDL/elektroniczny_zamek/schematic.bdf
 source_file = 1, C:/Users/KUBA/Desktop/projektyVHDL/elektroniczny_zamek/digit_lock.vhd
 source_file = 1, C:/Users/KUBA/Desktop/projektyVHDL/elektroniczny_zamek/kb_ctrl_pckg.vhd
+source_file = 1, C:/Users/KUBA/Desktop/projektyVHDL/elektroniczny_zamek/kb_cntrl_sim.vwf
 source_file = 1, c:/intelfpga_lite/19.1/quartus/libraries/vhdl/ieee/prmtvs_b.vhd
 source_file = 1, c:/intelfpga_lite/19.1/quartus/libraries/vhdl/ieee/prmtvs_p.vhd
 source_file = 1, c:/intelfpga_lite/19.1/quartus/libraries/vhdl/ieee/timing_b.vhd
