@@ -1,19 +1,18 @@
-|cnt_4
-rst => counter[0].ACLR
-rst => counter[1].ACLR
-rst => counter[2].ACLR
-rst => counter[3].ACLR
-clk => counter[0].CLK
-clk => counter[1].CLK
-clk => counter[2].CLK
-clk => counter[3].CLK
-ena => counter[3].ENA
-ena => counter[2].ENA
-ena => counter[1].ENA
-ena => counter[0].ENA
-wart[0] <= counter[0].DB_MAX_OUTPUT_PORT_TYPE
-wart[1] <= counter[1].DB_MAX_OUTPUT_PORT_TYPE
-wart[2] <= counter[2].DB_MAX_OUTPUT_PORT_TYPE
-wart[3] <= counter[3].DB_MAX_OUTPUT_PORT_TYPE
+|kb_ctrl_pckg
+rst => ~NO_FANOUT~
+clk => ~NO_FANOUT~
+col[0] => ~NO_FANOUT~
+col[1] => ~NO_FANOUT~
+col[2] => ~NO_FANOUT~
+col[3] => ~NO_FANOUT~
+key_pulse <= key_pulse.DB_MAX_OUTPUT_PORT_TYPE
+row[0] <= row[0].DB_MAX_OUTPUT_PORT_TYPE
+row[1] <= row[1].DB_MAX_OUTPUT_PORT_TYPE
+row[2] <= row[2].DB_MAX_OUTPUT_PORT_TYPE
+row[3] <= row[3].DB_MAX_OUTPUT_PORT_TYPE
+q[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= q[1].DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= q[2].DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= q[3].DB_MAX_OUTPUT_PORT_TYPE
 
 
